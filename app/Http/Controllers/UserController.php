@@ -19,4 +19,12 @@ class UserController extends Controller
         //dd($users->toArray());
         return view('users')->with('users',$users);
     }
+
+    public function edit(Users $user){
+        return view('users_edit', ['user' => $user]);
+    }
+
+    public function update(Request $request, string $id){
+        var_dump($request->except(['_token', '_method']));
+    }
 }

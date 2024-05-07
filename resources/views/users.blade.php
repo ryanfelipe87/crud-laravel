@@ -15,7 +15,10 @@
     <br><br>
     @foreach ($users as $user)
         <ul>
-            <li>{{ $user->first_name }} {{ $user->last_name }} | <a href="">Edit</a> | <a href="">Delete</a></li>
+            <li>{{ $user->first_name }} {{ $user->last_name }} |
+                <a href="{{ route('users.edit', ['user'=>$user->id]) }}">Edit</a> |
+                <a href="">Delete</a>
+            </li>
         </ul>
     @endforeach
 </body>
